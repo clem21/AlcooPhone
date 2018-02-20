@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<categories>
+    <category>
+        <name>Bière</name>
+        <item>
+            <name>leffe</name>
+            <degre>9</degre>
+        </item>
+        <item>
+            <name>1664</name>
+            <degre>9</degre>
+        </item>
+    </category> 
+    <category>
+        <name>Apéritif</name>
+        <item>
+            <name>whisky</name>
+            <degre>43</degre>
+        </item>
+        <item>
+            <name>porto</name>
+            <degre>19</degre>
+        </item>
+        <item>
+            <name>martini</name>
+            <degre>15</degre>
+        </item>
+    </category>
+    <category>
+        <name>Digestif</name>
+        <item>
+            <name>limoncello</name>
+            <degre>34</degre>
+        </item>
+        <item>
+            <name>jet27</name>
+            <degre>21</degre>
+        </item>
+        <item>
+            <name>porto</name>
+            <degre>19</degre>
+        </item>
+    </category>
+    <category>
+         <name>Vin</name>
+        <item>
+            <name>vin blanc</name>
+            <degre>12.5</degre>
+        </item>
+        <item>
+            <name>vin rouge</name>
+            <degre>12.5</degre>
+        </item>
+    </category>
+    <category>
+        <name>cocktail</name>
+        <item>
+            <name>pina colada</name>
+            <degre>16</degre>
+        </item>
+        <item>
+            <name>morito</name>
+            <degre>12</degre>
+        </item>
+    </category>
+</categories>
