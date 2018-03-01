@@ -15,6 +15,8 @@ import { ListPage } from '../list/list';
   templateUrl: 'drink.html',
 })
 export class DrinkPage {
+
+  public tab : Array<number>;
   sexe: string;
   age: number;
   poids: number;
@@ -24,9 +26,9 @@ export class DrinkPage {
     this.sexe = this.navParams.get('sexe');
     this.age = this.navParams.get('age');
     this.poids = this.navParams.get('poids');
-    console.log('sexe : ' + this.sexe);
-    console.log('age : ' + this.age);
-    console.log('poids : ' + this.poids);
+    if(this.navParams.get('tab') != null) {
+        this.tab = this.navParams.get('tab');
+    }
   }
 
   ionViewDidLoad() {

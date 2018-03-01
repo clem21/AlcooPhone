@@ -11,7 +11,9 @@
   <ion-item *ngFor="let item of xmlItems">
     {{item.id}} : {{item.name}}, {{item.degre}}°
     <button ion-button clear item-end (click)="add(item.id)"> <img src="../../assets/imgs/ajouter.png" alt="Ajouter"/></button>
+    {{tab[item.id]}}
     <button ion-button clear item-end (click)="remove(item.id)"> <img src="../../assets/imgs/retirer.png" alt="Retirer"/></button>
   </ion-item>
+  <button class="valid" (click)="valid()">Valider</button>
 
 </ion-content>

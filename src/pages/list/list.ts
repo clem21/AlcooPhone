@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import xml2js from 'xml2js';
 import { Http } from '@angular/http';
+import { DrinkPage } from '../drink/drink';
 
 /**
  * Generated class for the ListPage page.
@@ -20,10 +21,12 @@ export class ListPage {
 
   public xmlItems : any;
   public categ : string;
-  public tab : Array<string>;
+  public tab : Array<number>;
+  drinkPage = DrinkPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     this.categ = this.navParams.get('categ');
+    this.tab = [];
   }
 
   ionViewWillEnter()
@@ -67,11 +70,11 @@ export class ListPage {
            {
               //i++;
               var item = obj[k];
-              console.log(item);
               for(clem of item.category)
               {
-                if(clem.name[0] == that.categ) {
-                  for(sous_clem of clem.item) {
+                for(sous_clem of clem.item) {
+                  that.tab[sous_clem.$.id] = 0;
+                  if(clem.name[0] == that.categ) {
                     arr.push({
                       id     : sous_clem.$.id,
                       name   : sous_clem.name[0],
@@ -87,15 +90,25 @@ export class ListPage {
   }
 
   remove(item_id){
-    this.tab = [];
+    if(this.tab[item_id] > 0) {
+      this.tab[item_id] = (this.tab[item_id] - 1);
+    }
   }
 
   add(item_id){
-
+    if(this.tab[item_id] !< 10) {
+      this.tab[item_id] = (this.tab[item_id] + 1);
+    }
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListPage');
+  }
+
+  valid() {
+    this.navCtrl.push(this.drinkPage, {
+      tab: this.tab
+    })
   }
 
 }
